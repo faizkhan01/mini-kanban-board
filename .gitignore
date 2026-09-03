@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.next/
+out/
+coverage/
+*.log
+
+# Env files — commit only the .example variants
+.env
+.env.local
+!.env.example
+!.env.local.example
