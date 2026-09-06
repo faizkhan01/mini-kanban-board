@@ -20,9 +20,9 @@ and a `Dockerfile`, so Railway builds them without extra configuration.
    | `JWT_SECRET` | a long random string |
    | `JWT_EXPIRES_IN` | `7d` |
    | `CORS_ORIGIN` | the frontend URL (fill in after step 3) |
-3. `railway.json` already sets the start command
-   (`npx prisma migrate deploy && node dist/main.js`) and the `/api/health`
-   healthcheck.
+3. `railway.json` already sets the start command (`scripts/start.sh`, which
+   retries `prisma migrate deploy` until the database is reachable, then boots
+   the API) and the `/api/health` healthcheck.
 4. Generate a domain for the service (Settings → Networking → Generate Domain).
    Note it as `https://<backend>.up.railway.app`.
 

@@ -21,8 +21,8 @@ async function bootstrap() {
   app.enableCors({ origin: origins, credentials: true });
 
   const port = Number(process.env.PORT ?? 4000);
-  await app.listen(port);
+  await app.listen(port, '0.0.0.0');
   // eslint-disable-next-line no-console
-  console.log(`Kanban API listening on http://localhost:${port}/api`);
+  console.log(`Kanban API listening on port ${port}`);
 }
 bootstrap();

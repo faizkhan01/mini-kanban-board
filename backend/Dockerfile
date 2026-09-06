@@ -22,5 +22,6 @@ COPY --from=build /app/node_modules/.prisma ./node_modules/.prisma
 COPY --from=build /app/node_modules/@prisma ./node_modules/@prisma
 COPY --from=build /app/dist ./dist
 COPY prisma ./prisma
+COPY scripts ./scripts
 EXPOSE 4000
-CMD ["node", "dist/main.js"]
+CMD ["sh", "scripts/start.sh"]
